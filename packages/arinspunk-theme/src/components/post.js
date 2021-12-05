@@ -1,8 +1,8 @@
 // File: /packages/my-first-theme/src/components/post.js
 import React from "react";
 import { connect } from "frontity";
-import Intro from "./intro";
-import PrevNextNav from "./pre-next-nav";
+import Intro from "./Intro";
+import PrevNextNav from "./PrevNextNav";
 import dayjs from "dayjs";
 
 const Post = ({ state, libraries }) => {
