@@ -3,41 +3,21 @@ import React from "react";
 import { connect, Global, css, styled } from "frontity";
 import Link from "@frontity/components/link";
 import Switch from "@frontity/components/switch";
-import List from "./list";
-import Post from "./post";
-import Page from "./page";
-import Loading from "./loading";
-import Error from "./error";
+import List from "./List";
+import Post from "./Post";
+import Page from "./Page";
+import Loading from "./Loading";
+import Error from "./Error";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const Root = ({ state, actions }) => {
     const data = state.source.get(state.router.link);
     return (
         <>
-            <Global
-                styles={css`
-                    * {
-                        padding: 0;
-                        margin: 0;
-                        box-sizing: border-box;
-                    }
-                    html {
-                        font-family: system-ui, Arial, sans-serif;
-                    }
-                `}
-            />
+            <Global styles={GlobalStyles} />
             <Header isPostType={data.isPostType} isPage={data.isPage}>
                 <HeaderContent>
-                    <h1>Frontity Workshop</h1>
-                    {
-                        state.theme.isUrlVisible ? (
-                            <>
-                                Current URL: {state.router.link}{" "}
-                                <Button onClick={actions.theme.toggleUrl}>&#x3c; Hide URL</Button>
-                            </>
-                        ) : (
-                                <Button onClick={actions.theme.toggleUrl}>Show URL &#x3e;</Button>
-                            )
-                    }
+                    <h1>arinspunk</h1>
                     <Menu>
                         <Link link="/">Índice</Link>
                         <Link link="/historia">História</Link>
@@ -59,13 +39,6 @@ const Root = ({ state, actions }) => {
 }
 
 const Header = styled.header`
-    background-color: #e5edee;
-    border-width: 0 0 8px 0;
-    border-style: solid;
-    border-color: ${ props => props.isPostType ? (props.isPage ? 'lightsteelblue' : 'lightseagreen') : 'maroon'};
-    h1 {
-        color: #4a4a4a;
-    }
 `;
 const HeaderContent = styled.div`
     max-width: 800px;
@@ -73,24 +46,10 @@ const HeaderContent = styled.div`
     margin: auto;
 `;
 const Main = styled.main`
-    max-width: 800px;
-    padding: 1em;
-    margin: auto;
-    img {
-        max-width: 100%;
-    }
-    h2 {
-        margin: 0.5em 0;
-    }
-    p {
-        line-height: 1.25em;
-        margin-bottom: 0.75em;
-    }
-    figcaption {
-        color: #828282;
-        font-size: 0.8em;
-        margin-bottom: 1em;
-    }
+    width: 100%;
+    max-width: 1480px;
+    padding: 0 40px;
+    margin: 0 auto;
 `;
 const Menu = styled.div`
     display: flex;
