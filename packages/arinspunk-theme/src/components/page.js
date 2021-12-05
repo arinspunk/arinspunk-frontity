@@ -1,7 +1,7 @@
 // File: /packages/my-first-theme/src/components/page.js
 import React from "react";
 import { connect } from "frontity";
-import Intro from "./intro";
+import Intro from "./Intro";
 
 const Page = ({ state, libraries }) => {
     const data = state.source.get(state.router.link);
