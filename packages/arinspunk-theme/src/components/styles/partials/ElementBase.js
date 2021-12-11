@@ -2,48 +2,55 @@
 import { css } from "frontity";
 
 const styles = css`
-
     @media (prefers-reduced-motion: reduce) {
         * {
             animation-duration: 0s !important;
             transition-duration: 0s !important;
         }
     }
-
     *,
     *::before,
     *::after {
-        box-sizing: inherit;
-        -webkit-font-smoothing: antialiased;
-        word-break: break-word;
-        word-wrap: break-word;
-    }
-
-    html, body {
-        background: var(--body-background);
         box-sizing: border-box;
-        color: var(--color-text);
-        font-family: var(--body-family);
-        font-size: clamp(1.05rem, .9rem + 0.25vw, 1.25rem); 
-        letter-spacing: -0.015em;
-        text-align: left;
     }
-
+    html {
+        overflow-x:hidden;
+        font-size: 62.5%; /* Para usar rem de forma "amable": 10px = 1rem */
+        -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+    }
+    @media screen and (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+    body {
+        height: 100%;
+        font-family: var(--font-family-primary);
+        font-size: 2rem;
+        font-weight: normal;
+        font-variant-ligatures: common-ligatures discretionary-ligatures;
+        line-height: 1.5;
+        color: var(--color-basic-100);
+        background-color: var(--color-basic-900);
+        margin: 0;
+        padding: 0;
+        @media all and (max-width: 767px) {
+            font-size: 1.6rem; 
+        }
+    }
     main {
         display: block;
     }
-
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      margin: 1rem 0;
-      font-family: var(--header-family);
-      line-height: 1.25;
+        font-weight: normal;
     }
-    
     h1 {
       font-size: 4rem;
     }
@@ -53,19 +60,12 @@ const styles = css`
     h3 {
       font-size: 2.75rem;
     }
-    h4 {
+    h4, h5, h6 {
       font-size: 2rem;
-    }
-    h5 {
-      font-size: 1.5rem;
-    }
-    h6 {
-      font-size: 1.125rem;
     }
 
     p {
         line-height: 1.5;
-        padding-bottom: 1em;
     }
 
     em,
@@ -73,19 +73,6 @@ const styles = css`
     q,
     dfn {
         font-style: italic;
-    }
-
-    em em,
-    em i,
-    i em,
-    i i,
-    cite em,
-    cite i {
-        font-weight: bolder;
-    }
-
-    big {
-        font-size: 1.2em;
     }
 
     small {
@@ -133,16 +120,6 @@ const styles = css`
         border-color: #DCD7CA;
         margin: 4rem 0;
     }
-  
-    a {
-        text-decoration: none;
-        border-bottom: 2px solid var(--color-link); 
-    }
-    
-    a:hover  {
-        color: var(--color-link);
-        border-bottom:2.5px solid var(--color-link-darker);
-    } 
     
 `;
 

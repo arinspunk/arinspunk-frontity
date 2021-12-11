@@ -15,7 +15,6 @@ const Intro = (props) => {
                     {props.content}
                 </IntroContent>
             </IntroWrap>
-            <Cta href="http://google.es" children="Uma ligação"></Cta>
         </>
     );
 }

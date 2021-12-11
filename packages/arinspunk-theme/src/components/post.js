@@ -1,9 +1,9 @@
 // File: /packages/my-first-theme/src/components/post.js
 import React from "react";
 import { connect } from "frontity";
+import dayjs from "dayjs";
 import Intro from "./Intro";
 import PrevNextNav from "./PrevNextNav";
-import dayjs from "dayjs";
 
 const Post = ({ state, libraries }) => {
     const data = state.source.get(state.router.link);
@@ -12,8 +12,8 @@ const Post = ({ state, libraries }) => {
     const Html2React = libraries.html2react.Component;
     return (
         <>
-            <Intro title={formattedDate+' '+post.title.rendered} content={<Html2React html={post.content.rendered} />}></Intro>
-            <PrevNextNav></PrevNextNav>
+            <Intro title={formattedDate+' '+post.title.rendered} content={<Html2React html={post.content.rendered} />} />
+            <PrevNextNav />
         </>
     );
 }
