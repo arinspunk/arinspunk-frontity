@@ -10,7 +10,12 @@ import Loading from "./Loading";
 import Error from "./Error";
 import GlobalStyles from "./styles/GlobalStyles";
 
+import { getFigmaObjTree } from './tokens/tokens.js';
+
 const Root = ({ state, actions }) => {
+
+    getFigmaObjTree('288324-05f7da1b-4544-460a-8993-373b5897bb67','l36FIlsCt77nZ7mdUf8EnJ');
+
     const data = state.source.get(state.router.link);
     return (
         <>
