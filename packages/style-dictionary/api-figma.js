@@ -116,7 +116,7 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
     fs.writeFile('src/base.json', content, function (err) {
         if (err) throw err;
         console.log('\x1b[32m','JSON file with Figma data has been created successfully!');
-        console.log('\x1b[36m','For convert this file in token variables: npm run build','\n');
+        console.log('\x1b[36m','For convert this file in token variables run `npm run build`','\n');
     });
 }
 
