@@ -119,6 +119,6 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
     });
 }
 
-getStylesArtboard('288324-05f7da1b-4544-460a-8993-373b5897bb67','l36FIlsCt77nZ7mdUf8EnJ').catch( e => {
+getStylesArtboard(,).catch( e => {
     console.log('There has been a problem with your fetch operation: ' + e.message);
 });
