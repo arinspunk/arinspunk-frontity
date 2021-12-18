@@ -57,3 +57,4 @@ macOS .DS_Store files
 # Frontity
 build
 api-keys.js
+package-lock.json
