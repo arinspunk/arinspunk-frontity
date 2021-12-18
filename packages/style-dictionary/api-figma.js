@@ -1,5 +1,6 @@
 import fetch from "node-fetch"; // https://stackoverflow.com/questions/48433783/referenceerror-fetch-is-not-defined
 import fs from "fs";
+import {figmaApiKey, figmaId} from './api-keys.js';
 
 function getColor(stylesArtboard) {
     const color = {};
@@ -119,6 +120,6 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
     });
 }
 
-getStylesArtboard(,).catch( e => {
+getStylesArtboard(figmaApiKey,figmaId).catch( e => {
     console.log('There has been a problem with your fetch operation: ' + e.message);
 });
