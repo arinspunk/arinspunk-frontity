@@ -1,86 +1,127 @@
 // src/components/styles/partials/ElementBase.js
 import { css } from "frontity";
+import * as font from "../../tokens/lib/typography/all.js"
+import { TokenColorWhite, TokenColorBlack } from "../../tokens/lib/color/all.js"
 
 const styles = css`
+
     @media (prefers-reduced-motion: reduce) {
         * {
             animation-duration: 0s !important;
             transition-duration: 0s !important;
         }
     }
+
     *,
     *::before,
     *::after {
         box-sizing: border-box;
     }
+
     html {
         overflow-x:hidden;
         font-size: 62.5%; /* Para usar rem de forma "amable": 10px = 1rem */
         -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
         scroll-behavior: smooth;
-    }
-    @media screen and (prefers-reduced-motion: reduce) {
-        html {
+        @media screen and (prefers-reduced-motion: reduce) {
             scroll-behavior: auto;
         }
     }
+
     body {
         height: 100%;
-        font-family: var(--font-family-primary);
-        font-size: 2rem;
-        font-weight: normal;
+        font-family: ${font.TokenFontFamilyMain}, -apple-system, "Helvetica Neue", sans-serif;
+        font-size: ${font.TokenFontSizeDesktop1};
+        font-weight: ${font.TokenFontWeightRegular};
         font-variant-ligatures: common-ligatures discretionary-ligatures;
-        line-height: 1.5;
-        color: var(--color-basic-100);
-        background-color: var(--color-basic-900);
+        line-height: ${font.TokenFontLineHeightDesktop1};
+        color: ${TokenColorWhite};
+        background-color: ${TokenColorBlack};
         margin: 0;
         padding: 0;
+        @media all and (max-width: 991px) {
+            font-size: ${font.TokenFontSizeTablet1};
+            line-height: ${font.TokenFontLineHeightTablet1};
+        }
         @media all and (max-width: 767px) {
-            font-size: 1.6rem; 
+            font-size: ${font.TokenFontSizeMobile1};
+            line-height: ${font.TokenFontLineHeightMobile1};
         }
     }
+
     main {
         display: block;
     }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: normal;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: ${font.TokenFontWeightRegular};
     }
+
     h1 {
-      font-size: 4rem;
+        font-size: ${font.TokenFontSizeDesktop3};
+        line-height: ${font.TokenFontLineHeightDesktop3};
+        @media all and (max-width: 991px) {
+            font-size: ${font.TokenFontSizeTablet3};
+            line-height: ${font.TokenFontLineHeightTablet3};
+        }
+        @media all and (max-width: 767px) {
+            font-size: ${font.TokenFontSizeMobile3};
+            line-height: ${font.TokenFontLineHeightMobile3};
+        }
     }
+
     h2 {
-      font-size: 3rem;
-    }
-    h3 {
-      font-size: 2.75rem;
-    }
-    h4, h5, h6 {
-      font-size: 2rem;
+        font-size: ${font.TokenFontSizeDesktop2};
+        line-height: ${font.TokenFontLineHeightDesktop2};
+        @media all and (max-width: 991px) {
+            font-size: ${font.TokenFontSizeTablet2};
+            line-height: ${font.TokenFontLineHeightTablet2};
+        }
+        @media all and (max-width: 767px) {
+            font-size: ${font.TokenFontSizeMobile2};
+            line-height: ${font.TokenFontLineHeightMobile2};
+        }
     }
 
-    p {
-        line-height: 1.5;
+    h3, h4, h5, h6 {
+        font-size: ${font.TokenFontSizeDesktop1};
+        line-height: ${font.TokenFontLineHeightDesktop1};
+        @media all and (max-width: 991px) {
+            font-size: ${font.TokenFontSizeTablet1};
+            line-height: ${font.TokenFontLineHeightTablet1};
+        }
+        @media all and (max-width: 767px) {
+            font-size: ${font.TokenFontSizeMobile1};
+            line-height: ${font.TokenFontLineHeightMobile1};
+        }
     }
 
-    em,
-    i,
-    q,
-    dfn {
-        font-style: italic;
+    a {
+        color: ${TokenColorWhite};
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     small {
-        font-size: 0.75em;
+        font-size: ${font.TokenFontSizeDesktop0};
+        line-height: ${font.TokenFontLineHeightDesktop0};
+        @media all and (max-width: 991px) {
+            font-size: ${font.TokenFontSizeTablet0};
+            line-height: ${font.TokenFontLineHeightTablet0};
+        }
+        @media all and (max-width: 767px) {
+            font-size: ${font.TokenFontSizeMobile0};
+            line-height: ${font.TokenFontLineHeightMobile0};
+        }
     }
 
-    b,
-    strong {
+    em, i, q, dfn {
+        font-style: italic;
+    }
+
+    b, strong {
         font-weight: 700;
     }
 
