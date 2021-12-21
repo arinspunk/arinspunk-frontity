@@ -1,6 +1,6 @@
 import fetch from "node-fetch"; // https://stackoverflow.com/questions/48433783/referenceerror-fetch-is-not-defined
 import fs from "fs";
-import {figmaApiKey, figmaId} from './api-keys.js';
+import {figmaApiKey, figmaId} from './figma-keys.js';
 
 function getColor(stylesArtboard) {
     const color = {};
@@ -44,7 +44,7 @@ function getSize(stylesArtboard) {
 function getFont(stylesArtboard) {
     const font = {};
     const fontStylesAtrboard = stylesArtboard.filter(item => {
-        return item.name === "font";
+        return item.name === "typography";
     })[0].children;
     fontStylesAtrboard.map((fontItem, i) => {
         let subFonts = {};
@@ -54,26 +54,30 @@ function getFont(stylesArtboard) {
                 subFontItem.children.map(subSubFontItem =>{
                     let subSubFontObj = {
                         [subSubFontItem.name]: {
-                            ...(fontItem.name == 'font-size' && {
-                                value: `${subSubFontItem.style.fontSize}px`
+                            ...(fontItem.name == 'size' && {
+                                value: `${subSubFontItem.style.fontSize}px`,
+                                type: "font-size"
                             }),
                             ...(fontItem.name == 'line-height' && {
-                                value: `${subSubFontItem.style.lineHeightPercent}%`
+                                value: `${subSubFontItem.style.lineHeightPercent}%`,
+                                type: `${fontItem.name}`
                             }),
-                            type: "typography"
+                            category: "typography"
                         }
                     }
                     Object.assign(subSubFonts, subSubFontObj);
                 });
             } else {
                 let subSubFontObj = {
-                    ...(fontItem.name == 'font-weight' && {
-                        value: `${subFontItem.style.fontWeight}`
+                    ...(fontItem.name == 'weight' && {
+                        value: `${subFontItem.style.fontWeight}`,
+                        type: "font-weight"
                     }),
-                    ...(fontItem.name == 'font-family' && {
-                        value: `${subFontItem.style.fontFamily}`
+                    ...(fontItem.name == 'family' && {
+                        value: `${subFontItem.style.fontFamily}`,
+                        type: "font-family"
                     }),
-                    type: "typography"
+                    category: "typography"
                 }
                 Object.assign(subSubFonts, subSubFontObj);
             }
@@ -115,8 +119,9 @@ async function getStylesArtboard(figmaApiKey, figmaId) {
     const content = JSON.stringify(baseTokeensJSON, null, 4);
     fs.writeFile('src/base.json', content, function (err) {
         if (err) throw err;
-        console.log('\x1b[32m','JSON file with Figma data has been created successfully!');
-        console.log('\x1b[36m','For convert this file in token variables run `npm run build`','\n');
+        console.log('\n');
+        console.log('\x1b[1;32m','👌👌','JSON file with Figma data has been created successfully!','\n');
+        console.log('\x1b[1;34m','📝👉','For convert this file in token variables run: `npm run tokens`','\n\n\n','\x1b[1;37m');
     });
 }
 

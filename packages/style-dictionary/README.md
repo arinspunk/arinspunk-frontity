@@ -8,8 +8,14 @@ open this folder in the terminal or drag'n'drop this file into the VS code and r
 $ npm i
 ```
 
-## Run the build script
+## Run the figma api script
 
 ```
-$ npm run build
+$ npm run api
+```
+
+## Run the tokens script
+
+```
+$ npm run tokens
 ```
