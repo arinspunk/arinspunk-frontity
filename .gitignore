@@ -58,3 +58,4 @@ macOS .DS_Store files
 build
 figma-keys.js
 package-lock.json
+base.json
