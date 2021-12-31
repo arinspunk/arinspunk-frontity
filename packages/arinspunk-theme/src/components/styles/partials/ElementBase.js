@@ -1,6 +1,7 @@
 // src/components/styles/partials/ElementBase.js
 import { css } from "frontity";
-import * as font from "../../tokens/lib/typography/all.js"
+import * as font from "../../tokens/lib/typography/all.js";
+import * as size from "../../tokens/lib/spacing/all.js"
 import { TokenColorWhite, TokenColorBlack } from "../../tokens/lib/color/all.js"
 
 const styles = css`
@@ -95,6 +96,10 @@ const styles = css`
             font-size: ${font.TokenFontSizeMobile1};
             line-height: ${font.TokenFontLineHeightMobile1};
         }
+    }
+
+    p {
+        margin-bottom: ${size.TokenSize3};
     }
 
     a {

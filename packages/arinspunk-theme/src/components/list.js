@@ -2,55 +2,75 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
+import { Container, Row, Col12 } from "./Shared";
+import { TokenColorWhite } from "./tokens/lib/color/all.js";
+import {
+    TokenFontSizeDesktop2,
+    TokenFontSizeTablet2,
+    TokenFontSizeMobile2,
+    TokenFontLineHeightDesktop2,
+    TokenFontLineHeightTablet2,
+    TokenFontLineHeightMobile2
+} from "./tokens/lib/typography/all.js";
 import dayjs from "dayjs";
 
 const List = ({ state }) => {
     const data = state.source.get(state.router.link);
     return (
         <>
-            <Items className="list">
-                {data.items.map((item) => {
-                    const post = state.source[item.type][item.id];
-                    const formattedDate = dayjs(post.date).format("YYYY");
-                    return (
-                        <li key={item.id} className="list__item">
-                            <Link link={post.link} className="list__link">
-                                {formattedDate} {post.title.rendered}
-                            </Link>
-                        </li>
-                    )
-                })}
-            </Items>
+            <Container>
+                <Row>
+                    <Col12>
+                        <Items>
+                            {data.items.map((item) => {
+                                const post = state.source[item.type][item.id];
+                                const formattedDate = dayjs(post.date).format("YYYY");
+                                return (
+                                    <Item key={item.id}>
+                                        <ItemLink link={post.link}>
+                                            <ItemYear>{formattedDate} </ItemYear>{post.title.rendered}
+                                        </ItemLink>
+                                    </Item>
+                                )
+                            })}
+                        </Items>
+                    </Col12>
+                </Row>
+            </Container>
         </>
     );
 }
 
 const Items = styled.ul`
-    & {
-        list-style: none;
+    list-style: none;
+`;
+
+const Item = styled.li`
+    margin-bottom: 10px;
+    font-size: ${TokenFontSizeDesktop2};
+    line-height: ${TokenFontLineHeightDesktop2};
+    @media all and (max-width: 991px) {
+        font-size: ${TokenFontSizeTablet2};
+        line-height: ${TokenFontLineHeightTablet2};
     }
-    & a {
-        display: block;
-        margin: 6px 0;
-        font-size: 1.2em;
-        color: steelblue;
-        text-decoration: none;
+    @media all and (max-width: 767px) {
+        font-size: ${TokenFontSizeMobile2};
+        line-height: ${TokenFontLineHeightMobile2};
     }
 `;
-const PrevNextNav = styled.div`
-    padding-top: 1.5em;
-    & > button {
-        background: #eee;
-        text-decoration: none;
-        padding: 0.5em 1em;
-        color: #888;
-        border: 1px solid #aaa;
-        font-size: 0.8em;
-        margin-right: 2em;
+
+const ItemLink = styled(Link)`
+    text-decoration: none;
+    color: ${TokenColorWhite};
+    &:hover {
+        text-decoration: underline;
     }
-    & > button:hover {
-        cursor: pointer;
-    }
+`;
+
+const ItemYear = styled.span`
+    width: 95px;
+    display: inline-block;
+    opacity: .4;
 `;
 
 export default connect(List);

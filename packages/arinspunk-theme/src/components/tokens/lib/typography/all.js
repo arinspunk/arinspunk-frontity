@@ -1,31 +1,31 @@
 /**
  * Do not edit directly
- * Generated on Tue, 21 Dec 2021 17:14:22 GMT
+ * Generated on Sat, 25 Dec 2021 19:34:08 GMT
  */
 
-export const TokenFontLineHeightDesktop0 = "133.33334350585938%";
-export const TokenFontLineHeightDesktop1 = "128%";
-export const TokenFontLineHeightDesktop2 = "116.36363220214844%";
-export const TokenFontLineHeightDesktop3 = "114.8718032836914%";
-export const TokenFontLineHeightTablet0 = "113.77777862548828%";
-export const TokenFontLineHeightTablet1 = "118.51851654052734%";
-export const TokenFontLineHeightTablet2 = "110.61727905273438%";
-export const TokenFontLineHeightTablet3 = "117.33332824707031%";
-export const TokenFontLineHeightMobile0 = "121.90476989746094%";
-export const TokenFontLineHeightMobile1 = "106.66667175292969%";
-export const TokenFontLineHeightMobile2 = "128%";
-export const TokenFontLineHeightMobile3 = "119.46665954589844%";
-export const TokenFontSizeDesktop0 = "16px";
-export const TokenFontSizeDesktop1 = "20px";
-export const TokenFontSizeDesktop2 = "33px";
-export const TokenFontSizeDesktop3 = "52px";
-export const TokenFontSizeTablet0 = "15px";
-export const TokenFontSizeTablet1 = "18px";
-export const TokenFontSizeTablet2 = "27px";
-export const TokenFontSizeTablet3 = "40px";
-export const TokenFontSizeMobile0 = "14px";
-export const TokenFontSizeMobile1 = "16px";
-export const TokenFontSizeMobile2 = "20px";
-export const TokenFontSizeMobile3 = "25px";
+export const TokenFontLineHeightDesktop0 = "2.5rem";
+export const TokenFontLineHeightDesktop1 = "3rem";
+export const TokenFontLineHeightDesktop2 = "4.5rem";
+export const TokenFontLineHeightDesktop3 = "7rem";
+export const TokenFontLineHeightTablet0 = "2rem";
+export const TokenFontLineHeightTablet1 = "2.5rem";
+export const TokenFontLineHeightTablet2 = "3.5rem";
+export const TokenFontLineHeightTablet3 = "5.5rem";
+export const TokenFontLineHeightMobile0 = "2rem";
+export const TokenFontLineHeightMobile1 = "2rem";
+export const TokenFontLineHeightMobile2 = "3rem";
+export const TokenFontLineHeightMobile3 = "3.5rem";
+export const TokenFontSizeDesktop0 = "1.6rem";
+export const TokenFontSizeDesktop1 = "2rem";
+export const TokenFontSizeDesktop2 = "3.3000000000000003rem";
+export const TokenFontSizeDesktop3 = "5.2rem";
+export const TokenFontSizeTablet0 = "1.5rem";
+export const TokenFontSizeTablet1 = "1.8rem";
+export const TokenFontSizeTablet2 = "2.7rem";
+export const TokenFontSizeTablet3 = "4rem";
+export const TokenFontSizeMobile0 = "1.4000000000000001rem";
+export const TokenFontSizeMobile1 = "1.6rem";
+export const TokenFontSizeMobile2 = "2rem";
+export const TokenFontSizeMobile3 = "2.5rem";
 export const TokenFontWeightRegular = "400";
 export const TokenFontFamilyMain = "Isaac";

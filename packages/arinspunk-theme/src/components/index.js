@@ -1,79 +1,35 @@
 // File: /packages/my-first-theme/src/components/index.js
 import React from "react";
-import { connect, Global, css, styled } from "frontity";
-import Link from "@frontity/components/link";
+import { connect, Global } from "frontity";
+import GlobalStyles from "./styles/GlobalStyles";
 import Switch from "@frontity/components/switch";
-import List from "./List";
+import Header from "./Header";
+import Footer from "./Footer";
+import Home from "./Home";
 import Post from "./Post";
 import Page from "./Page";
 import Loading from "./Loading";
 import Error from "./Error";
-import GlobalStyles from "./styles/GlobalStyles";
+//import { getFigmaObjTree } from './tokens/tokens.js';
 
-import { getFigmaObjTree } from './tokens/tokens.js';
-
-const Root = ({ state, actions }) => {
-
+const Root = ({ state }) => {
     //getFigmaObjTree('288324-05f7da1b-4544-460a-8993-373b5897bb67','l36FIlsCt77nZ7mdUf8EnJ');
-
     const data = state.source.get(state.router.link);
+    console.log(data.link);
     return (
         <>
             <Global styles={GlobalStyles} />
-            <Header isPostType={data.isPostType} isPage={data.isPage}>
-                <HeaderContent>
-                    <h1>arinspunk</h1>
-                    <Menu>
-                        <Link link="/">Índice</Link>
-                        <Link link="/historia">História</Link>
-                    </Menu>
-                </HeaderContent>
-            </Header>
-            <Main>
-                <Switch>
-                    <Loading when={data.isFetching} />
-                    <List when={data.isArchive} />
-                    <Post when={data.isPost} />
-                    <Page when={data.isPage} />
-                    <Page when={data.isDestinations} />
-                    <Error when={data.isError} />
-                </Switch>
-            </Main>
+            <Header />
+            <Switch>
+                <Loading when={data.isFetching} />
+                <Home when={data.isArchive} />
+                <Post when={data.isPost} />
+                <Page when={data.isPage} />
+                <Error when={data.isError} />
+            </Switch>
+            <Footer />
         </>
     );
 }
-
-const Header = styled.header`
-`;
-const HeaderContent = styled.div`
-    max-width: 800px;
-    padding: 2em 1em;
-    margin: auto;
-`;
-const Main = styled.main`
-    width: 100%;
-    max-width: 1480px;
-    padding: 0 40px;
-    margin: 0 auto;
-`;
-const Menu = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-top: 1em;
-    & > a {
-        margin-right: 1em;
-        color: steelblue;
-        text-decoration: none;
-    }
-`;
-const Button = styled.button`
-    background: transparent;
-    border: none;
-    color: #aaa;
-    :hover {
-        cursor: pointer;
-        color: #888;
-    }
-`;
 
 export default connect(Root);

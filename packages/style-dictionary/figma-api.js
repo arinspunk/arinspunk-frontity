@@ -55,11 +55,11 @@ function getFont(stylesArtboard) {
                     let subSubFontObj = {
                         [subSubFontItem.name]: {
                             ...(fontItem.name == 'size' && {
-                                value: `${subSubFontItem.style.fontSize}px`,
+                                value: `${subSubFontItem.style.fontSize*0.1}rem`,
                                 type: "font-size"
                             }),
                             ...(fontItem.name == 'line-height' && {
-                                value: `${subSubFontItem.style.lineHeightPercent}%`,
+                                value: `${subSubFontItem.style.lineHeightPx*0.1}rem`,
                                 type: `${fontItem.name}`
                             }),
                             category: "typography"
