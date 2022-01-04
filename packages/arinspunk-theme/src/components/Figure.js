@@ -23,27 +23,24 @@ const Img = ({ state }) => {
             <FigureContainer>
                 <Row>
                     {post.figure.map((item, index) => {
-                        const srcset =
-                            Object.values(item.image.sizes)
-                                // Get the url and width of each size.
-                                .map((item) => [item.large])
-                                // Recude them to a string with the format required by `srcset`.
-                                .reduce(
-                                    (final, current, index, array) =>
-                                        final.concat(
-                                            `${current.join(" ")}w${index !== array.length - 1 ? ", " : ""}`
-                                        ),
-                                    ""
-                                ) || null;
+                        const size = item.image.sizes;
+                        const srcset = `
+                            ${size.thumbnail} ${size['thumbnail-width']}w,
+                            ${size.medium} ${size['medium-width']}w,
+                            ${size.medium_large} ${size['medium_large-width']}w,
+                            ${size.large} ${size['large-width']}w,
+                            ${size['1536x1536']} ${size['1536x1536-width']}w,
+                            ${size['2048x2048']} ${size['2048x2048-width']}w
+                        `;
                         return (
                             <Col6 key={index}>
                                 <Figure>
                                     <StyledImage
                                         alt={item.image.alt}
                                         src={item.image.url}
-                                        // srcSet={srcset}
-                                        width={item.image.sizes['large-width']}
-                                        height={item.image.sizes['large-height']}
+                                        srcSet={srcset}
+                                        width={size['large-width']}
+                                        height={size['large-height']}
                                     />
                                     <FigCaption>
                                         {item.caption}

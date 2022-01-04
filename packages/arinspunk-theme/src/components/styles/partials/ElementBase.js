@@ -37,6 +37,8 @@ const styles = css`
         font-weight: ${font.TokenFontWeightRegular};
         font-variant-ligatures: common-ligatures discretionary-ligatures;
         line-height: ${font.TokenFontLineHeightDesktop1};
+        font-variant-ligatures: normal;
+	    text-rendering: optimizeLegibility;
         color: ${TokenColorWhite};
         background-color: ${TokenColorBlack};
         margin: 0;

@@ -2,7 +2,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
-import Cta from "./Cta";
 import { Container, Row, Col6, Col12 } from "./Shared";
 import {
     TokenFontSizeDesktop2,
@@ -33,7 +32,8 @@ const NavPrevNext = ({state}) => {
                                     Anterior
                                 </Label>
                                 <Title>
-                                    {post.previous.title}
+                                    <Arrow>&lt;-</Arrow>
+                                    {post.previous.title}    
                                 </Title> 
                             </NavLink>
                         )}
@@ -46,13 +46,11 @@ const NavPrevNext = ({state}) => {
                                 </Label>
                                 <Title>
                                     {post.next.title}
+                                    <Arrow>-&gt;</Arrow>
                                 </Title> 
                             </NavLink>
                         )}
                     </Col6>
-                    <Col12 centered>
-                        <Cta link={'/'} children={'voltar ao índice'} />
-                    </Col12>
                 </Row>
             </NavContainer>
         </>
@@ -64,15 +62,33 @@ const NavContainer = styled(Container)`
 `;
 
 const NavLink = styled(Link)`
+    position: relative;
     display: block;
-    margin-bottom: 62px;
+    margin-bottom: 92px;
     text-decoration: none;
     text-align: ${ props =>
         props.right ? 'right' : 'left'
     };
-    padding: ${ props =>
-        props.right ? '0 17.65% 0 35.3%' : '0 35.3% 0 17.65%'
-    };
+    padding: ${ props => props.right ? '0 calc(11.76% + 40px) 0 calc(23.53% + 80px)' : '0 calc(23.53% + 80px) 0 calc(11.76% + 40px)' };
+    font-size: ${TokenFontSizeDesktop2};
+    line-height: ${TokenFontLineHeightDesktop2};
+    @media all and (max-width: 991px) {
+        font-size: ${TokenFontSizeTablet2};
+        line-height: ${TokenFontLineHeightTablet2};
+    }
+    @media all and (max-width: 767px) {
+        font-size: ${TokenFontSizeMobile2};
+        line-height: ${TokenFontLineHeightMobile2};
+    }
+    & span > span {
+        ${ props => props.right ? 'left: calc(-11.76% - 40px);' : 'right: calc(-11.76% - 40px);' };
+    }
+    &:hover span > span {
+        ${ props => props.right ? 'left: calc(-11.76% - 50px);' : 'right: calc(-11.76% - 50px);' };
+    }
+    &:hover span + span {
+        text-decoration: underline;
+    }
 `;
 
 const Label = styled.span`
@@ -91,17 +107,15 @@ const Label = styled.span`
 `;
 
 const Title = styled.span`
+    position: relative;
     display: block;
-    font-size: ${TokenFontSizeDesktop2};
-    line-height: ${TokenFontLineHeightDesktop2};
-    @media all and (max-width: 991px) {
-        font-size: ${TokenFontSizeTablet2};
-        line-height: ${TokenFontLineHeightTablet2};
-    }
-    @media all and (max-width: 767px) {
-        font-size: ${TokenFontSizeMobile2};
-        line-height: ${TokenFontLineHeightMobile2};
-    }
+`;
+
+const Arrow = styled.span`
+    position: absolute;
+    top: -2px;
+    font-size: 4.8rem;
+    transition: ease-out .1s;
 `;
 
 export default connect(NavPrevNext);

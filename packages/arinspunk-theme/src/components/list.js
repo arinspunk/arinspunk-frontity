@@ -2,6 +2,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
+import dayjs from "dayjs";
 import { Container, Row, Col12 } from "./Shared";
 import { TokenColorWhite } from "./tokens/lib/color/all.js";
 import {
@@ -12,7 +13,6 @@ import {
     TokenFontLineHeightTablet2,
     TokenFontLineHeightMobile2
 } from "./tokens/lib/typography/all.js";
-import dayjs from "dayjs";
 
 const List = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -40,6 +40,8 @@ const List = ({ state }) => {
         </>
     );
 }
+
+export default connect(List);
 
 const Items = styled.ul`
     list-style: none;
@@ -72,5 +74,3 @@ const ItemYear = styled.span`
     display: inline-block;
     opacity: .4;
 `;
-
-export default connect(List);
