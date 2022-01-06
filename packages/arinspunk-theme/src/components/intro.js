@@ -51,11 +51,11 @@ const IntroContainer = styled(Container)`
 
 const IntroTitle = styled.h1`
     margin-bottom: 48px;
-    margin-top: 182px;
+    margin-top: 232px;
 `;
 const IntroDate = styled.div`
     margin-bottom: 48px;
-    margin-top: 182px;
+    margin-top: 232px;
     font-size: ${TokenFontSizeDesktop3};
     line-height: ${TokenFontLineHeightDesktop3};
     @media all and (max-width: 991px) {

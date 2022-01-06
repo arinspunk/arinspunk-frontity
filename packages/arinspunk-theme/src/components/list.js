@@ -4,7 +4,7 @@ import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
 import dayjs from "dayjs";
 import { Container, Row, Col12 } from "./Shared";
-import { TokenColorWhite } from "./tokens/lib/color/all.js";
+import { TokenColorWhite, TokenColorBlack700, TokenColorBlack600 } from "./tokens/lib/color/all.js";
 import {
     TokenFontSizeDesktop2,
     TokenFontSizeTablet2,
@@ -72,5 +72,5 @@ const ItemLink = styled(Link)`
 const ItemYear = styled.span`
     width: 95px;
     display: inline-block;
-    opacity: .4;
+    color: ${TokenColorBlack700};
 `;
