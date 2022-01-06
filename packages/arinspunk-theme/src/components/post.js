@@ -1,6 +1,6 @@
 // File: /packages/my-first-theme/src/components/Post.js
 import React from "react";
-import { connect, Head } from "frontity";
+import { connect } from "frontity";
 import dayjs from "dayjs";
 import Intro from "./Intro";
 import Figure from "./Figure";
@@ -16,13 +16,6 @@ const Post = ({ state, libraries }) => {
     const regex = /(<([^>]+)>)/gi;
     return (
         <>
-            <Head>
-            <title>{post.title.rendered} - Arinspunk</title>
-                <meta
-                    name="description"
-                    content={post.excerpt.rendered.replace(regex, '')}
-                />
-            </Head>
             <Intro title={post.title.rendered} content={<Html2React html={post.content.rendered} />} date={formattedDate} />
             {!data.isPage && (
                 <>

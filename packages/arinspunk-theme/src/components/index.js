@@ -1,6 +1,6 @@
 // File: /packages/my-first-theme/src/components/index.js
 import React from "react";
-import { connect, Global, Head } from "frontity";
+import { connect, Global } from "frontity";
 import GlobalStyles from "./styles/GlobalStyles";
 import Switch from "@frontity/components/switch";
 import Header from "./Header";
@@ -17,13 +17,6 @@ const Root = ({ state }) => {
     console.log(data.link);
     return (
         <>
-            <Head>
-                <title>Arinspunk - Arquivo</title>
-                <meta
-                    name="description"
-                    content="O arquivo das Arinspunk"
-                />
-            </Head>
             <Global styles={GlobalStyles} />
             <Header />
             <Switch>
