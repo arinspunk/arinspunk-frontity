@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 25 Dec 2021 19:34:08 GMT
+ * Generated on Thu, 06 Jan 2022 01:16:57 GMT
  */
 
 export const TokenFontFamilyMain = "Isaac";
