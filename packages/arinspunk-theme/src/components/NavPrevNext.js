@@ -25,7 +25,7 @@ const NavPrevNext = ({state}) => {
         <>
             <NavContainer>
                 <Row>
-                    <Col6>
+                    <ColNav>
                         {post.previous && (
                             <NavLink link={post.previous.slug} right="true">
                                 <Label>
@@ -37,8 +37,8 @@ const NavPrevNext = ({state}) => {
                                 </Title> 
                             </NavLink>
                         )}
-                    </Col6>
-                    <Col6>
+                    </ColNav>
+                    <ColNav>
                         {post.next && (
                             <NavLink link={post.next.slug}>
                                 <Label>
@@ -50,7 +50,7 @@ const NavPrevNext = ({state}) => {
                                 </Title> 
                             </NavLink>
                         )}
-                    </Col6>
+                    </ColNav>
                 </Row>
             </NavContainer>
         </>
@@ -59,6 +59,16 @@ const NavPrevNext = ({state}) => {
 
 const NavContainer = styled(Container)`
     margin-top: 193px;
+    @media all and (max-width: 767px) {
+        margin-top: 63px;
+    }
+`;
+
+const ColNav = styled(Col6)`
+    @media all and (max-width: 767px) {
+        width: calc(50% - 15px);
+        margin-right: 15px;
+    }
 `;
 
 const NavLink = styled(Link)`
@@ -72,19 +82,37 @@ const NavLink = styled(Link)`
     padding: ${ props => props.right ? '0 calc(11.76% + 40px) 0 calc(23.53% + 80px)' : '0 calc(23.53% + 80px) 0 calc(11.76% + 40px)' };
     font-size: ${TokenFontSizeDesktop2};
     line-height: ${TokenFontLineHeightDesktop2};
+    @media all and (max-width: 1280px) {
+        padding: ${ props => props.right ? '0 calc(11.76% + 40px) 0 60px' : '0 60px 0 calc(11.76% + 40px)' };
+    }
     @media all and (max-width: 991px) {
+        padding: ${ props => props.right ? '0 calc(11.76% + 40px) 0 45px' : '0 45px 0 calc(11.76% + 40px)' };
         font-size: ${TokenFontSizeTablet2};
         line-height: ${TokenFontLineHeightTablet2};
     }
     @media all and (max-width: 767px) {
+        padding: 0;
+        margin-bottom: 52px;
         font-size: ${TokenFontSizeMobile2};
         line-height: ${TokenFontLineHeightMobile2};
     }
     & span > span {
         ${ props => props.right ? 'left: calc(-11.76% - 40px);' : 'right: calc(-11.76% - 40px);' };
+        @media all and (max-width: 1280px) {
+            ${ props => props.right ? 'left: -60px;' : 'right: -60px;' };
+        }
+        @media all and (max-width: 991px) {
+            ${ props => props.right ? 'left: -45px;' : 'right: -45px;' };
+        }
     }
     &:hover span > span {
         ${ props => props.right ? 'left: calc(-11.76% - 50px);' : 'right: calc(-11.76% - 50px);' };
+        @media all and (max-width: 1280px) {
+            ${ props => props.right ? 'left: -80px' : 'right: -80px;' };
+        }
+        @media all and (max-width: 991px) {
+            ${ props => props.right ? 'left: -60px' : 'right: -60px;' };
+        }
     }
     &:hover span + span {
         text-decoration: underline;
@@ -97,10 +125,12 @@ const Label = styled.span`
     font-size: ${TokenFontSizeDesktop0};
     line-height: ${TokenFontLineHeightDesktop0};
     @media all and (max-width: 991px) {
+        margin-bottom: 5px;
         font-size: ${TokenFontSizeTablet0};
         line-height: ${TokenFontLineHeightTablet0};
     }
     @media all and (max-width: 767px) {
+        margin-bottom: 7px;
         font-size: ${TokenFontSizeMobile0};
         line-height: ${TokenFontLineHeightMobile0};
     }
@@ -116,6 +146,12 @@ const Arrow = styled.span`
     top: -2px;
     font-size: 4.8rem;
     transition: ease-out .1s;
+    @media all and (max-width: 991px) {
+        font-size: 3.6rem;
+    }
+    @media all and (max-width: 767px) {
+        display: none;
+    }
 `;
 
 export default connect(NavPrevNext);

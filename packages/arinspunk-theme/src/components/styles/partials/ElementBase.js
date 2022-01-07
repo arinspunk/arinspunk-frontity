@@ -100,8 +100,14 @@ const styles = css`
         }
     }
 
-    p {
+    p, ul, ol {
         margin-bottom: ${size.TokenSize3};
+        @media all and (max-width: 991px) {
+            margin-bottom: 25px;
+        }
+        @media all and (max-width: 767px) {
+            margin-bottom: ${size.TokenSize2};
+        }
     }
 
     a {

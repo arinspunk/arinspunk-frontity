@@ -62,15 +62,26 @@ const Item = styled.li`
 `;
 
 const ItemLink = styled(Link)`
+    position: relative;
+    display: block;
     text-decoration: none;
     color: ${TokenColorWhite};
+    padding-left: 95px;
+    @media all and (max-width: 991px) {
+        padding-left: 80px;
+    }
+    @media all and (max-width: 767px) {
+        padding-left: 60px;
+    }
     &:hover {
         text-decoration: underline;
     }
 `;
 
 const ItemYear = styled.span`
-    width: 95px;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: inline-block;
-    color: ${TokenColorBlack700};
+    color: ${TokenColorBlack600};
 `;

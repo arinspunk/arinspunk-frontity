@@ -4,7 +4,7 @@ import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
 import Nav from "./Nav";
 import { Container, Row, Col6 } from "./Shared";
-import { TokenColorBlack, TokenColorBlack700 } from "./tokens/lib/color/all.js";
+import { TokenColorBlack } from "./tokens/lib/color/all.js";
 
 const Header = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -13,15 +13,15 @@ const Header = ({ state }) => {
         <>
             <HeaderContainer>
                 <HeaderRow>
-                    <Col6>
+                    <ColLeft>
                         <HeaderLogo>
                             <HeaderLogoIcon>🌱</HeaderLogoIcon>
                             {currentUrl !== "/" ? <HeaderLogoLink link="/">arinspunk ⚰️</HeaderLogoLink> : 'arinspunk ⚰️'}
                         </HeaderLogo> 
-                    </Col6>
-                    <Col6>
+                    </ColLeft>
+                    <ColRight>
                         <Nav />
-                    </Col6>
+                    </ColRight>
                 </HeaderRow>
             </HeaderContainer>
         </>
@@ -42,11 +42,23 @@ const HeaderRow = styled(Row)`
     align-items: center;
     justify-content: center;
     @media all and (max-width: 991px) {
-        height: 40px;
+        height: 50px;
     }
     @media all and (max-width: 767px) {
-        height: 30px;
+        height: 40px;
     }
+`;
+
+const ColLeft = styled(Col6)`
+    @media all and (max-width: 767px) {
+        width: 100px;
+    } 
+`;
+
+const ColRight = styled(Col6)`
+    @media all and (max-width: 767px) {
+        width: calc(100% - 140px);
+    } 
 `;
 
 const HeaderLogo = styled.span`
@@ -54,7 +66,7 @@ const HeaderLogo = styled.span`
     transform: rotate(178.3deg);
     text-decoration: underline;
     text-decoration-style: dotted;
-    text-decoration-color: ${TokenColorBlack700};
+    text-decoration-color: green;
 `;
 
 const HeaderLogoIcon = styled.span`
@@ -62,11 +74,21 @@ const HeaderLogoIcon = styled.span`
     top: 14px;
     right: 12px;
     transform: rotate(180deg);
+    @media all and (max-width: 991px) {
+        top: 12px;
+        right: 11px;
+    }
+    @media all and (max-width: 767px) {
+        top: 10px;
+    }
 `;
 
 const HeaderLogoLink = styled(Link)`
     text-decoration-style: dotted;
-    text-decoration-color: ${TokenColorBlack700};
+    text-decoration-color: green;
+    &:hover {
+        text-decoration-color: green;
+    }
 `;
 
 export default connect(Header);

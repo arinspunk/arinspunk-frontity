@@ -10,9 +10,9 @@ const Footer = () => {
         <>
             <Container>
                 <FooterRow>
-                    <Col6>
-                    © arinspunk 2021
-                    </Col6>
+                    <ColLeft>
+                        © arinspunk {new Date().getFullYear()}
+                    </ColLeft>
                     <Col6>
                         <NavFooter />
                     </Col6>
@@ -22,14 +22,27 @@ const Footer = () => {
     );
 }
 
+export default connect(Footer);
+
 const FooterRow = styled(Row)`
-    height: 50px;
+    height: 60px;
     align-items: center;
     justify-content: center;
     margin-top: 175px;
+    @media all and (max-width: 991px) {
+        height: 50px;
+        margin-top: 135px;
+    }
+    @media all and (max-width: 767px) {
+        height: auto;
+        margin-top: 96px;
+        padding: 13px 0 11px;
+    }
 `;
 
-const Menu = styled.div`
+const ColLeft = styled(Col6)`
+    @media all and (max-width: 767px) {
+        order: 1;
+        margin-top: 25px;
+    } 
 `;
-
-export default connect(Footer);

@@ -1,6 +1,6 @@
 // File: /packages/my-first-theme/src/components/Post.js
 import React from "react";
-import { connect } from "frontity";
+import { connect, styled } from "frontity";
 import dayjs from "dayjs";
 import Intro from "./Intro";
 import Figure from "./Figure";
@@ -16,17 +16,22 @@ const Post = ({ state, libraries }) => {
     const regex = /(<([^>]+)>)/gi;
     return (
         <>
-            <Intro title={post.title.rendered} content={<Html2React html={post.content.rendered} />} date={formattedDate} />
             {!data.isPage && (
                 <>
+                    <Intro title={post.title.rendered} content={<Html2React html={post.content.rendered} />} date={formattedDate} />
                     <Figure />
                     <NavPrevNext />
+                </>
+            )}
+             {data.isPage && (
+                <>
+                    <Intro title={post.title.rendered} content={<Html2React html={post.content.rendered} />} />
                 </>
             )}
             <Container>
                 <Row>
                     <Col12 centered>
-                        <Link link={'/'} children={<Html2React html={'&#8617; Voltar ao índice'} />} />
+                        <ComeBackLink link={'/'} children={<Html2React html={'Voltar ao índice'} />} />
                     </Col12>
                 </Row>
             </Container>
@@ -35,3 +40,16 @@ const Post = ({ state, libraries }) => {
 }
 
 export default connect(Post);
+
+const ComeBackLink = styled(Link)`
+    position: relative;
+    &::before {
+        content: '↩';
+        position: absolute;
+        top: 0;
+        left: -25px;
+    }
+    @media all and (max-width: 767px) {
+        display: none;
+    }
+`;

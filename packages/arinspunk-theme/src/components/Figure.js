@@ -68,6 +68,10 @@ const FigureContainer = styled(Container)`
 `;
 
 const Figure = styled.figure`
+    margin-bottom: 37px;
+    @media all and (max-width: 767px) {
+        margin-bottom: 34px;
+    }
 `;
 
 const StyledImage = styled(Image)`
@@ -87,6 +91,7 @@ const FigCaption = styled.figcaption`
         line-height: ${TokenFontLineHeightTablet0};
     }
     @media all and (max-width: 767px) {
+        margin-top: 11px;
         font-size: ${TokenFontSizeMobile0};
         line-height: ${TokenFontLineHeightMobile0};
     }

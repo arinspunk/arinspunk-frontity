@@ -50,6 +50,9 @@ const NavList = styled.ul`
     margin: 0;
     padding: 0;
     display: flex;
+    @media all and (max-width: 767px) {
+        justify-content: flex-end;
+    }
 `;
 
 const NavItem = styled.li`
@@ -64,12 +67,7 @@ const NavItem = styled.li`
             text-decoration: underline;
         }
     }
-`;
-
-/**
- * Styling of nav elements
- */
-const NavItemWithChild = styled.div`
-`;
-const ChildMenu = styled.div`
+    @media all and (max-width: 767px) {
+        margin: 0 0 0 20px;
+    } 
 `;

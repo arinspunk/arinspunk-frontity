@@ -8,7 +8,9 @@ import {
     TokenFontSizeMobile3,
     TokenFontLineHeightDesktop3,
     TokenFontLineHeightTablet3,
-    TokenFontLineHeightMobile3
+    TokenFontLineHeightMobile3,
+    TokenFontSizeMobile1,
+    TokenFontLineHeightMobile1
 } from "./tokens/lib/typography/all.js";
 
 const Intro = (props) => {
@@ -21,11 +23,13 @@ const Intro = (props) => {
                             {props.title}
                         </IntroTitle>
                     </Col6>
-                    <Col6>
-                        <IntroDate>
-                            {props.date}
-                        </IntroDate>
-                    </Col6>
+                    {props.date &&
+                        <Col6>
+                            <IntroDate>
+                                {props.date}
+                            </IntroDate>
+                        </Col6>
+                    }
                 </Row>
                 <Row>
                     <Col6>
@@ -40,31 +44,41 @@ const Intro = (props) => {
 }
 
 const IntroContainer = styled(Container)`
+    margin-top: 232px;
     margin-bottom: 110px;
     @media all and (max-width: 991px) {
-        margin-bottom: 70px;
+        margin-top: 202px;
+        margin-bottom: 90px;
     }
     @media all and (max-width: 767px) {
-        margin-bottom: 37px;
+        margin-top: 121px;
+        margin-bottom: 38px;
     }
 `;
 
 const IntroTitle = styled.h1`
     margin-bottom: 48px;
-    margin-top: 232px;
+    @media all and (max-width: 991px) {
+        margin-bottom: 41px;
+    }
+    @media all and (max-width: 767px) {
+        margin-bottom: 30px;
+    }
 `;
 const IntroDate = styled.div`
     margin-bottom: 48px;
-    margin-top: 232px;
     font-size: ${TokenFontSizeDesktop3};
     line-height: ${TokenFontLineHeightDesktop3};
     @media all and (max-width: 991px) {
+        margin-bottom: 41px;
         font-size: ${TokenFontSizeTablet3};
         line-height: ${TokenFontLineHeightTablet3};
     }
     @media all and (max-width: 767px) {
-        font-size: ${TokenFontSizeMobile3};
-        line-height: ${TokenFontLineHeightMobile3};
+        display: none;
+        margin-bottom: 30px;
+        font-size: ${TokenFontSizeMobile1};
+        line-height: ${TokenFontLineHeightMobile1};
     }
 `;
 const IntroContent = styled.div`
