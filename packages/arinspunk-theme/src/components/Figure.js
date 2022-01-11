@@ -25,22 +25,22 @@ const Img = ({ state }) => {
                     {post.figure.map((item, index) => {
                         const size = item.image.sizes;
                         const srcset = `
-                            ${size.thumbnail} ${size['thumbnail-width']}w,
-                            ${size.medium} ${size['medium-width']}w,
                             ${size.medium_large} ${size['medium_large-width']}w,
+                            ${size.small} ${size['small-width']}w,
+                            ${size.medium} ${size['medium-width']}w,
                             ${size.large} ${size['large-width']}w,
-                            ${size['1536x1536']} ${size['1536x1536-width']}w,
-                            ${size['2048x2048']} ${size['2048x2048-width']}w
+                            ${size.extra_large} ${size['extra_large-width']}w
                         `;
                         return (
                             <Col6 key={index}>
                                 <Figure>
                                     <StyledImage
                                         alt={item.image.alt}
-                                        src={item.image.url}
+                                        src={size.medium_large}
                                         srcSet={srcset}
-                                        width={size['large-width']}
-                                        height={size['large-height']}
+                                        sizes="(min-width: 992px) 680px, (min-width: 768px) calc(100vw - 60px), calc(100vw - 30px)"
+                                        width={size['medium_large-width']}
+                                        height={size['medium_large-height']}
                                     />
                                     <FigCaption>
                                         {item.caption}
