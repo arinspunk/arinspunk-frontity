@@ -14,7 +14,6 @@ import Error from "./Error";
 const Root = ({ state }) => {
     //getFigmaObjTree('288324-05f7da1b-4544-460a-8993-373b5897bb67','l36FIlsCt77nZ7mdUf8EnJ');
     const data = state.source.get(state.router.link);
-    console.log(data.link);
     return (
         <>
             <Global styles={GlobalStyles} />
