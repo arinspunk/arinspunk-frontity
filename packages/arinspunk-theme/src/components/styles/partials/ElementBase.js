@@ -43,7 +43,7 @@ const styles = css`
         background-color: ${TokenColorBlack};
         margin: 0;
         padding: 0;
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 1279px) {
             font-size: ${font.TokenFontSizeTablet1};
             line-height: ${font.TokenFontLineHeightTablet1};
         }
@@ -64,7 +64,7 @@ const styles = css`
     h1 {
         font-size: ${font.TokenFontSizeDesktop3};
         line-height: ${font.TokenFontLineHeightDesktop3};
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 1279px) {
             font-size: ${font.TokenFontSizeTablet3};
             line-height: ${font.TokenFontLineHeightTablet3};
         }
@@ -77,7 +77,7 @@ const styles = css`
     h2 {
         font-size: ${font.TokenFontSizeDesktop2};
         line-height: ${font.TokenFontLineHeightDesktop2};
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 1279px) {
             font-size: ${font.TokenFontSizeTablet2};
             line-height: ${font.TokenFontLineHeightTablet2};
         }
@@ -90,7 +90,7 @@ const styles = css`
     h3, h4, h5, h6 {
         font-size: ${font.TokenFontSizeDesktop1};
         line-height: ${font.TokenFontLineHeightDesktop1};
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 1279px) {
             font-size: ${font.TokenFontSizeTablet1};
             line-height: ${font.TokenFontLineHeightTablet1};
         }
@@ -102,7 +102,7 @@ const styles = css`
 
     p, ul, ol {
         margin-bottom: ${size.TokenSize3};
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 1279px) {
             margin-bottom: 25px;
         }
         @media all and (max-width: 767px) {
@@ -120,7 +120,7 @@ const styles = css`
     small {
         font-size: ${font.TokenFontSizeDesktop0};
         line-height: ${font.TokenFontLineHeightDesktop0};
-        @media all and (max-width: 991px) {
+        @media all and (max-width: 1279px) {
             font-size: ${font.TokenFontSizeTablet0};
             line-height: ${font.TokenFontLineHeightTablet0};
         }

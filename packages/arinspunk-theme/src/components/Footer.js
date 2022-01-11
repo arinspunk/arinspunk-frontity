@@ -30,18 +30,17 @@ const FooterRow = styled(Row)`
     justify-content: center;
     margin-top: 175px;
     @media all and (max-width: 991px) {
-        height: 50px;
+        height: auto;
+        padding: 13px 0 11px;
         margin-top: 135px;
     }
     @media all and (max-width: 767px) {
-        height: auto;
         margin-top: 96px;
-        padding: 13px 0 11px;
     }
 `;
 
 const ColLeft = styled(Col6)`
-    @media all and (max-width: 767px) {
+    @media all and (max-width: 991px) {
         order: 1;
         margin-top: 25px;
     } 

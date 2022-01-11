@@ -50,7 +50,7 @@ export const Col6 = styled.div`
     width: calc(50% - ${gutterDesktop});
     margin-right: ${gutterDesktop};
     @media all and (max-width: 991px) {
-        width: calc(50% - ${gutterTablet});
+        width: calc(100% - ${gutterTablet});
         margin-right: ${gutterTablet};
     }
     @media all and (max-width: 767px) {
