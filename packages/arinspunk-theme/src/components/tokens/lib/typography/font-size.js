@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 06 Jan 2022 01:16:57 GMT
+ * Generated on Thu, 10 Mar 2022 10:26:22 GMT
  */
 
 export const TokenFontSizeDesktop0 = "1.6rem";

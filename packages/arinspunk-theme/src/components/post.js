@@ -44,10 +44,11 @@ export default connect(Post);
 const ComeBackLink = styled(Link)`
     position: relative;
     &::before {
-        content: '↩';
+        content: '<-';
         position: absolute;
-        top: 0;
-        left: -25px;
+        top: -7px;
+        left: -20px;
+        transform: rotate(-45deg);
     }
     @media all and (max-width: 767px) {
         display: none;

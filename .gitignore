@@ -59,3 +59,4 @@ build
 figma-keys.js
 package-lock.json
 base.json
+.vercel

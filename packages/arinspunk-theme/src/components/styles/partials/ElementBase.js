@@ -24,7 +24,7 @@ const styles = css`
         font-size: 62.5%; /* Para usar rem de forma "amable": 10px = 1rem */
         -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
-        scroll-behavior: smooth;
+        /* scroll-behavior: smooth; */
         @media screen and (prefers-reduced-motion: reduce) {
             scroll-behavior: auto;
         }

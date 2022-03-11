@@ -4,7 +4,7 @@ import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
 import dayjs from "dayjs";
 import { Container, Row, Col12 } from "./Shared";
-import { TokenColorWhite, TokenColorBlack700, TokenColorBlack600 } from "./tokens/lib/color/all.js";
+import { TokenColorWhite, TokenColorBlack600 } from "./tokens/lib/color/all.js";
 import {
     TokenFontSizeDesktop2,
     TokenFontSizeTablet2,
@@ -72,6 +72,9 @@ const ItemLink = styled(Link)`
     }
     @media all and (max-width: 767px) {
         padding-left: 60px;
+    }
+    &:visited {
+        color: ${TokenColorBlack600};
     }
     &:hover {
         text-decoration: underline;

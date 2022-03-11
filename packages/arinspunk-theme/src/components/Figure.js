@@ -29,7 +29,8 @@ const Img = ({ state }) => {
                             ${size.small} ${size['small-width']}w,
                             ${size.medium} ${size['medium-width']}w,
                             ${size.large} ${size['large-width']}w,
-                            ${size.extra_large} ${size['extra_large-width']}w
+                            ${size.extra_large} ${size['extra_large-width']}w,
+                            ${item.image.url} ${item.image.width}w
                         `;
                         return (
                             <Col6 key={index}>
@@ -68,9 +69,9 @@ const FigureContainer = styled(Container)`
 `;
 
 const Figure = styled.figure`
-    margin-bottom: 37px;
+    margin-bottom: 40px;
     @media all and (max-width: 767px) {
-        margin-bottom: 34px;
+        margin-bottom: 35px;
     }
 `;
 
@@ -82,7 +83,7 @@ const StyledImage = styled(Image)`
 `;
 
 const FigCaption = styled.figcaption`
-    margin-top: 13px;
+    margin-top: 18px;
     text-align: right;
     font-size: ${TokenFontSizeDesktop0};
     line-height: ${TokenFontLineHeightDesktop0};

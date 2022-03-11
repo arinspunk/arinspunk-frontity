@@ -2,7 +2,7 @@ const settings = {
   "name": "arinspunk-frontity",
   "state": {
     "frontity": {
-      "url": "http://frontity-ak:8888/",
+      "url": "http://frontity-ak/",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://frontity-ak:8888/",
+          "url": "http://frontity-ak/",
         }
       }
     },
