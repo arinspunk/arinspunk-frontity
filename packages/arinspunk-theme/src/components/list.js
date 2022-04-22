@@ -86,5 +86,4 @@ const ItemYear = styled.span`
     top: 0;
     left: 0;
     display: inline-block;
-    color: ${TokenColorBlack600};
 `;

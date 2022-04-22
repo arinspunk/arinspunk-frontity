@@ -74,7 +74,7 @@ const ColNav = styled(Col6)`
 const NavLink = styled(Link)`
     position: relative;
     display: block;
-    margin-bottom: 92px;
+    margin-bottom: 112px;
     text-decoration: none;
     text-align: ${ props =>
         props.right ? 'right' : 'left'

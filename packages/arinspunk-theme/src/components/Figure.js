@@ -35,14 +35,16 @@ const Img = ({ state }) => {
                         return (
                             <Col6 key={index}>
                                 <Figure>
-                                    <StyledImage
-                                        alt={item.image.alt}
-                                        src={size.medium_large}
-                                        srcSet={srcset}
-                                        sizes="(min-width: 992px) 680px, (min-width: 768px) calc(100vw - 60px), calc(100vw - 30px)"
-                                        width={size['medium_large-width']}
-                                        height={size['medium_large-height']}
-                                    />
+                                    <a href={size.extra_large} target="_blank">
+                                        <StyledImage
+                                            alt={item.image.alt}
+                                            src={size.medium_large}
+                                            srcSet={srcset}
+                                            sizes="(min-width: 992px) 680px, (min-width: 768px) calc(100vw - 60px), calc(100vw - 30px)"
+                                            width={size['medium_large-width']}
+                                            height={size['medium_large-height']}
+                                        />
+                                    </a>
                                     <FigCaption>
                                         {item.caption}
                                     </FigCaption>

@@ -2,7 +2,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import { Container, Row, Col6 } from "./Shared";
-import { TokenColorBlack600 } from "./tokens/lib/color/all.js";
 import {
     TokenFontSizeDesktop3,
     TokenFontSizeTablet3,
@@ -65,7 +64,6 @@ const IntroDate = styled.div`
     margin-bottom: 48px;
     font-size: ${TokenFontSizeDesktop3};
     line-height: ${TokenFontLineHeightDesktop3};
-    color: ${TokenColorBlack600};
     @media all and (max-width: 991px) {
         margin-bottom: 41px;
         font-size: ${TokenFontSizeTablet3};

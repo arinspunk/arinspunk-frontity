@@ -49,6 +49,9 @@ export const Col12 = styled.div`
 export const Col6 = styled.div`
     width: calc(50% - ${gutterDesktop});
     margin-right: ${gutterDesktop};
+    margin-left: ${props =>
+        props.mlAuto ? 'auto' : ''
+    };
     @media all and (max-width: 991px) {
         width: calc(100% - ${gutterTablet});
         margin-right: ${gutterTablet};
