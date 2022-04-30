@@ -66,7 +66,7 @@ const ItemLink = styled(Link)`
     display: block;
     text-decoration: none;
     color: ${TokenColorWhite};
-    padding-left: 95px;
+    padding-left: 100px;
     @media all and (max-width: 991px) {
         padding-left: 80px;
     }
@@ -74,7 +74,6 @@ const ItemLink = styled(Link)`
         padding-left: 60px;
     }
     &:visited {
-        color: ${TokenColorBlack600};
     }
     &:hover {
         text-decoration: underline;

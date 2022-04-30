@@ -48,9 +48,9 @@ export default connect(Post);
 const ComeBackLink = styled(Link)`
     position: relative;
     display: inline-block;
-    padding: 10px 40px;
+    padding: 10px 25px;
     border: 1px solid ${TokenColorWhite};
-    border-radius: 40px;
+    border-radius: 25px;
     text-decoration: none;
     transition: .3s ease;
     &:hover {
