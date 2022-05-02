@@ -27,7 +27,7 @@ const Post = ({ state, libraries }) => {
                     <NavPrevNext />
                 </>
             )}
-             {data.isPage && (
+            {data.isPage && (
                 <>
                     <Intro title={post.title.rendered} content={<Html2React html={post.content.rendered} />} />
                 </>

@@ -3,7 +3,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
 import dayjs from "dayjs";
-import { Container, Row, Col12 } from "./Shared";
+import { Container, Row, Col6 } from "./Shared";
 import { TokenColorWhite, TokenColorBlack600 } from "./tokens/lib/color/all.js";
 import {
     TokenFontSizeDesktop2,
@@ -20,7 +20,7 @@ const List = ({ state }) => {
         <>
             <Container>
                 <Row>
-                    <Col12>
+                    <Col6>
                         <Items>
                             {data.items.map((item) => {
                                 const post = state.source[item.type][item.id];
@@ -34,7 +34,7 @@ const List = ({ state }) => {
                                 )
                             })}
                         </Items>
-                    </Col12>
+                    </Col6>
                 </Row>
             </Container>
         </>

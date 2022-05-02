@@ -47,7 +47,9 @@ export const Col12 = styled.div`
 `;
 
 export const Col6 = styled.div`
-    width: calc(50% - ${gutterDesktop});
+    width: ${props =>
+        props.full ? '100%' : 'calc(50% - '+gutterDesktop+')'
+    };
     margin-right: ${gutterDesktop};
     margin-left: ${props =>
         props.mlAuto ? 'auto' : ''

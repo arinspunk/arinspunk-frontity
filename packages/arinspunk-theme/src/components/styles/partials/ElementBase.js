@@ -100,7 +100,7 @@ const styles = css`
         }
     }
 
-    p, ul, ol {
+    p, ul, ol, blockquote {
         margin-bottom: ${size.TokenSize3};
         @media all and (max-width: 1279px) {
             margin-bottom: 25px;
@@ -117,7 +117,7 @@ const styles = css`
         }
     }
 
-    small {
+    small, cite {
         font-size: ${font.TokenFontSizeDesktop0};
         line-height: ${font.TokenFontLineHeightDesktop0};
         @media all and (max-width: 1279px) {
@@ -128,6 +128,17 @@ const styles = css`
             font-size: ${font.TokenFontSizeMobile0};
             line-height: ${font.TokenFontLineHeightMobile0};
         }
+    }
+
+    blockquote {
+        position: relative;
+        padding-left: ${size.TokenSize3}
+    }
+
+    blockquote p::before {
+        position: absolute;
+        left: 19px;
+        content: "«";
     }
 
     em, i, q, dfn {
