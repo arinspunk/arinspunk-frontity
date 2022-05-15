@@ -5,11 +5,9 @@ import { Container, Row, Col6 } from "./Shared";
 import {
     TokenFontSizeDesktop3,
     TokenFontSizeTablet3,
-    TokenFontSizeMobile3,
     TokenFontSizeMobile1,
     TokenFontLineHeightDesktop3,
     TokenFontLineHeightTablet3,
-    TokenFontLineHeightMobile3,
     TokenFontLineHeightMobile1
 } from "./tokens/lib/typography/all.js";
 
