@@ -2,9 +2,9 @@ const settings = {
   "name": "arinspunk-frontity",
   "state": {
     "frontity": {
-      "url": "http://frontity-ak/",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://arinspunk.com/",
+      "title": "Arquivo Arinspunk",
+      "description": "O arquivo das defuntas Arinspunk, estúdio de design"
     }
   },
   "packages": [
@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://frontity-ak/",
+          "url": "https://arinspunk.com/",
         }
       }
     },

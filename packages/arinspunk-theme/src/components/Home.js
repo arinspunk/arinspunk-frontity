@@ -7,7 +7,7 @@ import List from "./List";
 const Home = () => {
     return (
         <>
-            <Intro title="Index" content="Considero a vida uma estalagem onde tenho que me demorar." />
+            <Intro title="Arquivo" content="Bem-vindas ao arquivo das defuntas Arinspunk. Aqui tendes guardados os nossos osos, aguardando polos vossos." />
             <List />
         </>
     );

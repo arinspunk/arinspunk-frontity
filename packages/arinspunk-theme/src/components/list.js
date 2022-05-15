@@ -3,7 +3,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "@frontity/components/link";
 import dayjs from "dayjs";
-import { Container, Row, Col6 } from "./Shared";
+import { Container, Row, Col12 } from "./Shared";
 import { TokenColorWhite, TokenColorBlack600 } from "./tokens/lib/color/all.js";
 import {
     TokenFontSizeDesktop2,
@@ -20,7 +20,7 @@ const List = ({ state }) => {
         <>
             <Container>
                 <Row>
-                    <Col6>
+                    <Col12>
                         <Items>
                             {data.items.map((item) => {
                                 const post = state.source[item.type][item.id];
@@ -34,7 +34,7 @@ const List = ({ state }) => {
                                 )
                             })}
                         </Items>
-                    </Col6>
+                    </Col12>
                 </Row>
             </Container>
         </>
@@ -56,6 +56,7 @@ const Item = styled.li`
         line-height: ${TokenFontLineHeightTablet2};
     }
     @media all and (max-width: 767px) {
+        margin-bottom: 15px;
         font-size: ${TokenFontSizeMobile2};
         line-height: ${TokenFontLineHeightMobile2};
     }
@@ -66,12 +67,12 @@ const ItemLink = styled(Link)`
     display: block;
     text-decoration: none;
     color: ${TokenColorWhite};
-    padding-left: 100px;
+    padding-left: 95px;
     @media all and (max-width: 991px) {
         padding-left: 80px;
     }
     @media all and (max-width: 767px) {
-        padding-left: 60px;
+        padding-left: 55px;
     }
     &:visited {
     }

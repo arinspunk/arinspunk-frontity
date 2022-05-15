@@ -6,9 +6,11 @@ import {
     TokenFontSizeDesktop3,
     TokenFontSizeTablet3,
     TokenFontSizeMobile3,
+    TokenFontSizeMobile1,
     TokenFontLineHeightDesktop3,
     TokenFontLineHeightTablet3,
-    TokenFontLineHeightMobile3
+    TokenFontLineHeightMobile3,
+    TokenFontLineHeightMobile1
 } from "./tokens/lib/typography/all.js";
 
 const Intro = (props) => {
@@ -57,7 +59,7 @@ const IntroContainer = styled(Container)`
 const IntroTitle = styled.h1`
     margin-bottom: 48px;
     @media all and (max-width: 991px) {
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
 `;
 const IntroDate = styled.div`
@@ -70,9 +72,9 @@ const IntroDate = styled.div`
         line-height: ${TokenFontLineHeightTablet3};
     }
     @media all and (max-width: 767px) {
-        margin-bottom: 30px;
-        font-size: ${TokenFontSizeMobile3};
-        line-height: ${TokenFontLineHeightMobile3};
+        margin-bottom: 20px;
+        font-size: ${TokenFontSizeMobile1};
+        line-height: ${TokenFontLineHeightMobile1};
     }
 `;
 const IntroContent = styled.div`
