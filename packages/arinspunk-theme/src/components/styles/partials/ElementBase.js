@@ -135,10 +135,25 @@ const styles = css`
         padding-left: ${size.TokenSize3}
     }
 
+    blockquote p {
+        margin-bottom: 0;
+    }
+
     blockquote p::before {
         position: absolute;
         left: 19px;
         content: "«";
+    }
+
+    cite {
+        display: block;
+        margin-bottom: 60px;
+        @media all and (max-width: 1279px) {
+            margin-bottom: 50px;
+        }
+        @media all and (max-width: 767px) {
+            margin-bottom: 40px;
+        }
     }
 
     em, i, q, dfn {

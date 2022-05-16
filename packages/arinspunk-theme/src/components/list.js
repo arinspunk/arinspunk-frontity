@@ -8,10 +8,10 @@ import { TokenColorWhite, TokenColorBlack600 } from "./tokens/lib/color/all.js";
 import {
     TokenFontSizeDesktop2,
     TokenFontSizeTablet2,
-    TokenFontSizeMobile2,
+    TokenFontSizeMobile1,
     TokenFontLineHeightDesktop2,
     TokenFontLineHeightTablet2,
-    TokenFontLineHeightMobile2
+    TokenFontLineHeightMobile1
 } from "./tokens/lib/typography/all.js";
 
 const List = ({ state }) => {
@@ -56,9 +56,8 @@ const Item = styled.li`
         line-height: ${TokenFontLineHeightTablet2};
     }
     @media all and (max-width: 767px) {
-        margin-bottom: 15px;
-        font-size: ${TokenFontSizeMobile2};
-        line-height: ${TokenFontLineHeightMobile2};
+        font-size: ${TokenFontSizeMobile1};
+        line-height: ${TokenFontLineHeightMobile1};
     }
 `;
 
@@ -72,7 +71,7 @@ const ItemLink = styled(Link)`
         padding-left: 80px;
     }
     @media all and (max-width: 767px) {
-        padding-left: 55px;
+        padding-left: 48px;
     }
     &:visited {
     }

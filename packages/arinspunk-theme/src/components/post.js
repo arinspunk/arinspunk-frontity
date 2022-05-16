@@ -2,9 +2,9 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import dayjs from "dayjs";
+import Link from "@frontity/components/link";
 import Intro from "./Intro";
 import Figure from "./Figure";
-import Link from "@frontity/components/link";
 import NavPrevNext from "./NavPrevNext";
 import { Container, Row, Col12 } from "./Shared";
 import {
@@ -17,7 +17,6 @@ const Post = ({ state, libraries }) => {
     const post = state.source[data.type][data.id];
     const formattedDate = dayjs(post.date).format("YYYY");
     const Html2React = libraries.html2react.Component;
-    const regex = /(<([^>]+)>)/gi;
     return (
         <>
             {!data.isPage && (
