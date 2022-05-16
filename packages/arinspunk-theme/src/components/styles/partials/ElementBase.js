@@ -135,10 +135,6 @@ const styles = css`
         padding-left: ${size.TokenSize3}
     }
 
-    blockquote p {
-        margin-bottom: 0;
-    }
-
     blockquote p::before {
         position: absolute;
         left: 19px;
