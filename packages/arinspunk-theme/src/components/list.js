@@ -56,6 +56,7 @@ const Item = styled.li`
         line-height: ${TokenFontLineHeightTablet2};
     }
     @media all and (max-width: 767px) {
+        margin-bottom: 15px;
         font-size: ${TokenFontSizeMobile1};
         line-height: ${TokenFontLineHeightMobile1};
     }
@@ -71,7 +72,7 @@ const ItemLink = styled(Link)`
         padding-left: 80px;
     }
     @media all and (max-width: 767px) {
-        padding-left: 48px;
+        padding-left: 45px;
     }
     &:visited {
     }
