@@ -3,6 +3,7 @@ import React from "react";
 import { connect, Global } from "frontity";
 import GlobalStyles from "./styles/GlobalStyles";
 import Switch from "@frontity/components/switch";
+import Favicon from "./Favicon";
 import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
@@ -16,6 +17,7 @@ const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
     return (
         <>
+            <Favicon />
             <Global styles={GlobalStyles} />
             <Header />
             <Switch>
