@@ -7,7 +7,7 @@
     "frontity"
   ],
   "engines": {
-    "node": ">=10.0.0",
+    "node": "22.x",
     "npm": ">=6.0.0"
   },
   "scripts": {
@@ -17,7 +17,8 @@
   },
   "prettier": {},
   "dependencies": {
-    "@frontity/core": "^1.14.3",
+    "@frontity/components": "^1.8.2",
+    "@frontity/core": "^1.16.0",
     "@frontity/html2react": "^1.7.0",
     "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.4",
