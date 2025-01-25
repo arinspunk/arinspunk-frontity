@@ -26,7 +26,6 @@
     "arinspunk-theme": "file:packages/arinspunk-theme",
     "dayjs": "^1.10.7",
     "frontity": "^1.17.1",
-    // "node-sass": "^6.0.1",
     "style-dictionary": "file:packages/style-dictionary"
   }
 }
