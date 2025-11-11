@@ -5,5 +5,13 @@
       "src": "package.json",
       "use": "@frontity/now"
     }
-  ]
+  ],
+  "functions": {
+    "build/server.js": {
+      "includeFiles": [
+        "packages/arinspunk-theme/src/**",
+        "packages/arinspunk-theme/package.json"
+      ]
+    }
+  }
 }
