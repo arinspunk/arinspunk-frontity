@@ -15,6 +15,12 @@
     "serve": "frontity serve"
   },
   "prettier": {},
+  "overrides": {
+    "@loadable/server": "5.15.2",
+    "is-generator-function": "1.0.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
     "@frontity/components": "^1.8.2",
     "@frontity/core": "^1.16.0",
@@ -26,6 +32,8 @@
     "arinspunk-theme": "file:packages/arinspunk-theme",
     "dayjs": "^1.10.7",
     "frontity": "^1.17.1",
-    "style-dictionary": "file:packages/style-dictionary"
+    "style-dictionary": "file:packages/style-dictionary",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
