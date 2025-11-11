@@ -14,3 +14,6 @@
 
 [functions]
   node_bundler = "esbuild"
+  
+[functions.server]
+  included_files = ["frontity.settings.js", "build/**"]
