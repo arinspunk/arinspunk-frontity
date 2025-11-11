@@ -8,10 +8,7 @@
   ],
   "functions": {
     "build/server.js": {
-      "includeFiles": [
-        "packages/arinspunk-theme/src/**",
-        "packages/arinspunk-theme/package.json"
-      ]
+      "includeFiles": "packages/arinspunk-theme/**"
     }
   }
 }
