@@ -29,12 +29,12 @@
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
     "@frontity/yoast": "^2.1.1",
+    "@netlify/functions": "^1.6.0",
     "arinspunk-theme": "file:packages/arinspunk-theme",
     "dayjs": "^1.10.7",
     "frontity": "^1.17.1",
-    "style-dictionary": "file:packages/style-dictionary",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@netlify/functions": "^1.0.0"
+    "style-dictionary": "file:packages/style-dictionary"
   }
 }
