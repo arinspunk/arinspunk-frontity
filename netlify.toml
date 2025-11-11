@@ -11,6 +11,9 @@
 [build.environment]
   NODE_VERSION = "16"
 
-# IMPORTANTE: Cambiar a bundler zip
 [functions]
-  node_bundler = "zisi"
+  node_bundler = "esbuild"
+  
+[functions.server]
+  # Incluir el build de Frontity en la función
+  included_files = ["build/**"]
