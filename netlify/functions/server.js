@@ -1,25 +1,24 @@
 const path = require("path");
 
-let handler;
+let server;
 
-async function getHandler() {
-  if (handler) return handler;
+async function getServer() {
+  if (server) return server;
   
   try {
-    console.log("Loading Frontity server bundle...");
+    console.log("Loading Frontity server...");
     
     // Cargar el servidor compilado
     const serverPath = path.resolve(__dirname, "../../build/server.js");
     const serverModule = require(serverPath);
     
-    // El servidor puede estar en .default o directamente exportado
-    handler = serverModule.default || serverModule;
+    server = serverModule.default || serverModule;
     
-    console.log("Frontity server loaded successfully");
-    return handler;
+    console.log("Server loaded");
+    return server;
     
   } catch (error) {
-    console.error("Failed to load Frontity server:", error);
+    console.error("Failed to load server:", error);
     throw error;
   }
 }
@@ -28,31 +27,71 @@ exports.handler = async function(event, context) {
   context.callbackWaitsForEmptyEventLoop = false;
 
   try {
-    const frontityHandler = await getHandler();
+    const frontityServer = await getServer();
     
-    // Convertir el evento de Netlify al formato esperado por Frontity
-    const request = {
-      url: event.path || "/",
+    // Construir URL completa
+    const path = event.path || "/";
+    const queryString = event.queryStringParameters
+      ? "?" + new URLSearchParams(event.queryStringParameters).toString()
+      : "";
+    
+    const url = `https://${event.headers.host}${path}${queryString}`;
+    
+    console.log("Rendering:", url);
+    
+    // Crear objetos mock de req/res para Frontity
+    const req = {
+      url: url,
+      path: path,
       query: event.queryStringParameters || {},
       headers: event.headers || {},
+      method: event.httpMethod || "GET",
     };
     
-    console.log("Processing request:", request.url);
+    const res = {
+      statusCode: 200,
+      headers: {},
+      body: "",
+      
+      status(code) {
+        this.statusCode = code;
+        return this;
+      },
+      
+      setHeader(name, value) {
+        this.headers[name] = value;
+        return this;
+      },
+      
+      getHeader(name) {
+        return this.headers[name];
+      },
+      
+      write(chunk) {
+        this.body += chunk;
+      },
+      
+      end(chunk) {
+        if (chunk) {
+          this.body += chunk;
+        }
+      },
+    };
     
-    // Ejecutar el handler de Frontity
-    const response = await frontityHandler(request);
-
+    // Ejecutar el servidor de Frontity
+    await frontityServer(req, res);
+    
     return {
-      statusCode: response.status || 200,
+      statusCode: res.statusCode,
       headers: {
         "Content-Type": "text/html; charset=utf-8",
-        ...(response.headers || {}),
+        ...res.headers,
       },
-      body: response.body,
+      body: res.body,
     };
     
   } catch (error) {
-    console.error("Render error:", error);
+    console.error("Error:", error);
     
     return {
       statusCode: 500,
@@ -81,15 +120,16 @@ exports.handler = async function(event, context) {
                 border-left: 4px solid #e53e3e;
                 font-size: 14px;
               }
-              a { color: #3182ce; }
+              a { color: #3182ce; text-decoration: none; }
+              a:hover { text-decoration: underline; }
             </style>
           </head>
           <body>
             <h1>500 - Error del servidor</h1>
-            <p>Ocurrió un error al renderizar esta página.</p>
+            <p>Hubo un problema al renderizar esta página.</p>
             <p><a href="/">← Volver al inicio</a></p>
             <details>
-              <summary>Detalles técnicos (click para expandir)</summary>
+              <summary>Detalles técnicos</summary>
               <pre>${error.message}
 
 ${error.stack}</pre>
