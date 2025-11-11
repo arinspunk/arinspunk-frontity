@@ -25,8 +25,4 @@ const settings = {
   ]
 };
 
-// Exportar tanto como default como named export
-module.exports = settings;
-module.exports.default = settings;
-
 export default settings;
